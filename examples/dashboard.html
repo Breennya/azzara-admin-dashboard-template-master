@@ -367,182 +367,93 @@
 						</div>
 					</div>
 					<h2 class="section-title">Estadísticas en Tiempo Real</h2>
-					<div class="container">
-						<canvas id="biodigestorChart" width="400" height="200"></canvas>
-					</div>
-					
-					<script>
-						var ctx = document.getElementById('biodigestorChart').getContext('2d');
-						var biodigestorChart = new Chart(ctx, {
-							type: 'line',
-							data: {
-								labels: ['12:15', '12:20', '12:25', '12:30'], // Ejes X
-								datasets: [
-									{
-										label: 'Temperatura',
-										data: [29, 32, 30, 31], // Datos de producción del Biodigestor 1
-										borderColor: 'rgba(75, 192, 192, 1)',
-										backgroundColor: 'rgba(75, 192, 192, 0.2)'
-									}
-								]
-							},
-							options: {
-								scales: {
-									y: {
-										beginAtZero: true,
-										title: {
-											display: true,
-											text: 'Temperatura (C)' // Etiqueta para el eje Y
-										}
-									},
-									x: {
-										title: {
-											display: true,
-											text: 'Tiempo' // Etiqueta para el eje X
-										}
-									}
-								},
-								plugins: {
-									legend: {
-										display: true,
-										position: 'top',
-									},
-								}
-							}
-						});
-					</script>
-					<div class="container">
-						<canvas id="presionChart" width="400" height="200"></canvas>
-					</div>
-					
-					<script>
-						var ctx = document.getElementById('presionChart').getContext('2d');
-						var biodigestorChart = new Chart(ctx, {
-							type: 'line',
-							data: {
-								labels: ['12:15', '12:20', '12:25', '12:30'], // Ejes X
-								datasets: [
-									{
-										label: 'Presion',
-										data: [11350, 11200, 11542, 11201], // Datos de producción del Biodigestor 1
-										borderColor: 'rgba(75, 192, 192, 1)',
-										backgroundColor: 'rgba(75, 192, 192, 0.2)'
-									}
-								]
-							},
-							options: {
-								scales: {
-									y: {
-										beginAtZero: true,
-										title: {
-											display: true,
-											text: 'Pascales (PA)' // Etiqueta para el eje Y
-										}
-									},
-									x: {
-										title: {
-											display: true,
-											text: 'Tiempo' // Etiqueta para el eje X
-										}
-									}
-								},
-								plugins: {
-									legend: {
-										display: true,
-										position: 'top',
-									},
-								}
-							}
-						});
-					</script>
-					<div class="container">
-						<canvas id="humedadchart" width="400" height="200"></canvas>
-					</div>
-					
-					<script>
-						var ctx = document.getElementById('humedadchart').getContext('2d');
-						var humechart = new Chart(ctx, {
-							type: 'line',
-							data: {
-								labels: ['12:15', '12:20', '12:25', '12:30'], // Ejes X
-								datasets: [
-									{
-										label: 'Humedad',
-										data: [60, 68, 66, 62], // Datos de producción del Biodigestor 1
-										borderColor: 'rgba(75, 192, 192, 1)',
-										backgroundColor: 'rgba(75, 192, 192, 0.2)'
-									}
-								]
-							},
-							options: {
-								scales: {
-									y: {
-										beginAtZero: true,
-										title: {
-											display: true,
-											text: 'Humedad (%)' // Etiqueta para el eje Y
-										}
-									},
-									x: {
-										title: {
-											display: true,
-											text: 'Tiempo' // Etiqueta para el eje X
-										}
-									}
-								},
-								plugins: {
-									legend: {
-										display: true,
-										position: 'top',
-									},
-								}
-							}
-						});
-					</script>
-					<div class="container">
-						<canvas id="gaschart" width="400" height="200"></canvas>
-					</div>
-					
-					<script>
-						var ctx = document.getElementById('gaschart').getContext('2d');
-						var biodigestorChart = new Chart(ctx, {
-							type: 'line',
-							data: {
-								labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'], // Ejes X
-								datasets: [
-									{
-										label: 'Gas',
-										data: [5, 6, 7, 8], // Datos de producción del Biodigestor 1
-										borderColor: 'rgba(75, 192, 192, 1)',
-										backgroundColor: 'rgba(75, 192, 192, 0.2)'
-									}
-								]
-							},
-							options: {
-								scales: {
-									y: {
-										beginAtZero: true,
-										title: {
-											display: true,
-											text: 'Producción de Gas (m³)' // Etiqueta para el eje Y
-										}
-									},
-									x: {
-										title: {
-											display: true,
-											text: 'Tiempo' // Etiqueta para el eje X
-										}
-									}
-								},
-								plugins: {
-									legend: {
-										display: true,
-										position: 'top',
-									},
-								}
-							}
-						});
-					</script>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Temperatura Interna</div>
+								</div>
+								<div class="card-body">
+									<div class="chart-container">
+										<canvas id="tempInterna"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+
+                        <div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Temperatura Externa</div>
+								</div>
+								<div class="card-body">
+									<div class="chart-container">
+										<canvas id="tempExterna"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+
+
+                    <div class="row">
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Humedad Interna</div>
+								</div>
+								<div class="card-body">
+									<div class="chart-container">
+										<canvas id="humInterna"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+
+                        <div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Humedad Externa</div>
+								</div>
+								<div class="card-body">
+									<div class="chart-container">
+										<canvas id="humExterna"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+
+                    <div class="row">
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Presion</div>
+								</div>
+								<div class="card-body">
+									<div class="chart-container">
+										<canvas id="presion"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+
+                        <div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Gas</div>
+								</div>
+								<div class="card-body">
+									<div class="chart-container">
+										<canvas id="gas"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+
+
 			
 					<br>
 					<h2 class="section-title">Sensores</h2>
@@ -559,6 +470,10 @@
 
 	</div>
 </div>
+
+
+
+
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
@@ -619,6 +534,218 @@
 <script src="../assets/lib/lightbox/js/lightbox.min.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+    <script>
+        var TempExterna = document.getElementById('tempExterna').getContext('2d'),
+            tempInterna = document.getElementById('tempInterna').getContext('2d'),
+            humExterna = document.getElementById('humExterna').getContext('2d'),
+            humInterna = document.getElementById('humInterna').getContext('2d'),
+            presion = document.getElementById('presion').getContext('2d'),
+            gas = document.getElementById('gas').getContext('2d');
+    
+        // Gráfico de Temperatura Externa
+        var myLineChart1 = new Chart(TempExterna, {
+            type: 'line',
+            data: {
+                labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"],
+                datasets: [{
+                    label: "Temperatura Externa (°C)",
+                    borderColor: "#FF6347", // Rojo tomate
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#FF6347",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [15, 16, 15, 17, 18, 17, 16, 18, 19, 20, 21, 20]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#000' // Color del texto negro
+                    }
+                }
+            }
+        });
+    
+        // Gráfico de Temperatura Interna
+        var myLineChart2 = new Chart(tempInterna, {
+            type: 'line',
+            data: {
+                labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"],
+                datasets: [{
+                    label: "Temperatura Interna (°C)",
+                    borderColor: "#DC143C", // Rojo carmín
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#DC143C",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [22, 23, 22, 24, 25, 24, 23, 24, 26, 27, 28, 27]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#000' // Color del texto negro
+                    }
+                }
+            }
+        });
+    
+        // Gráfico de Humedad Interna
+        var myLineChart3 = new Chart(humInterna, {
+            type: 'line',
+            data: {
+                labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"],
+                datasets: [{
+                    label: "Humedad Interna (%)",
+                    borderColor: "#1E90FF", // Azul dodger
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#1E90FF",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [40, 45, 44, 46, 48, 47, 49, 50, 52, 53, 55, 54]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#000' // Color del texto negro
+                    }
+                }
+            }
+        });
+    
+        // Gráfico de Humedad Externa
+        var myLineChart4 = new Chart(humExterna, {
+            type: 'line',
+            data: {
+                labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"],
+                datasets: [{
+                    label: "Humedad Externa (%)",
+                    borderColor: "#4682B4", // Azul acero
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#4682B4",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [35, 36, 35, 37, 38, 36, 35, 37, 39, 41, 40, 39]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#000' // Color del texto negro
+                    }
+                }
+            }
+        });
+    
+        // Gráfico de Presión
+        var myLineChart5 = new Chart(presion, {
+            type: 'line',
+            data: {
+                labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"],
+                datasets: [{
+                    label: "Presión (Pa)",
+                    borderColor: "#32CD32", // Verde lima
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#32CD32",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [101325, 101500, 101300, 101450, 101400, 101350, 101300, 101500, 101400, 101325]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#000' // Color del texto negro
+                    }
+                }
+            }
+        });
+    
+        // Gráfico de Concentración de Gas
+        var myLineChart6 = new Chart(gas, {
+            type: 'line',
+            data: {
+                labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"],
+                datasets: [{
+                    label: "Concentración de Gas (ppm)",
+                    borderColor: "#FFD700", // Dorado
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#FFD700",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [400, 420, 410, 430, 420, 415, 430, 440, 450, 445, 455, 460]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#000' // Color del texto negro
+                    }
+                }
+            }
+        });
+    </script>
+    
+    
+    
+    
 
 </body>
 </html>
