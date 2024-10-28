@@ -21,9 +21,11 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/azzara.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
+	<link href="../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 	<div class="wrapper">
@@ -237,13 +239,318 @@
 		<div class="main-panel">
 			<div class="content">
 				<div class="page-inner">
-					<div class="page-header">
-						<h4 class="page-title">dasboard</h4>
+					<h1>Monitoreo <br> <span class="text-primary">Biodigestor Familia Pérez</span></h1>
+					<br>
+					<h2 class="section-title">Estructura</h2>
+					<div class="container-fluid">
+						<div class="row py-4">
+							<div class="col-lg-4 px-5 d-flex flex-column justify-content-center">
+								<!-- Imagen del Biodigestor -->
+								<div class="p-0 wow fadeIn" data-wow-delay="0.1s">
+									<section id="container" class="container-fluid">
+										<div class="row">
+											<div id="biodigestorImage" style="position: relative;"></div>
+											<img src="../assets/img/bio-1.jpg" alt="Biodigestor" class="img-responsive">
+										</div>
+									</section>
+								</div>
+								<!-- Fin de imagen del Biodigestor -->
+							</div>
+							<!--SEPARADOR-->
+							<div class="col-lg-1"></div>
+							<!--SEPARADOR-->
+			
+							<!-- Diagrama interactivo del biodigestor -->
+							<div class="col-lg-6">
+								<div class="p-0 wow fadeIn" data-wow-delay="0.1s">
+									<section id="container" class="container-fluid">
+										<div class="row">
+											<div id="biodigestorDiagram" style="position: relative;">
+												<img src="../assets/img/bio-diagram.jpg" usemap="#image-map" style="zoom:1;-o-transform:scale(0.3);-moz-transform: scale(0.3);" class="img-fluid">
+												
+												<!-- Tooltip para mostrar información -->
+												<div id="tooltip" style="display: none; position: absolute; background: #f8f9fa; border: 1px solid #dee2e6; padding: 8px; border-radius: 4px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"></div>
+								
+												<div id="circle-overlays"></div>
+												
+												<map name="image-map">
+													<area target="" alt="Temperatura Interna" title="Temperatura Interna" href="" coords="261,307,30" shape="circle" data-coords="261,307,30">
+													<area target="" alt="Válvula de Salida de Fertilizante" title="Válvula de Salida de Fertilizante" href="" coords="72,234,28" shape="circle" data-coords="72,234,28">
+													<area target="" alt="Concentración de gas y Presión interna" title="Concentración de gas y Presión interna" href="" coords="102,39,29" shape="circle" data-coords="102,39,29">
+													<area target="" alt="Temperatura y Humedad Externas" title="Temperatura y Humedad Externas" href="" coords="201,74,30" shape="circle" data-coords="201,74,30">
+													<area target="" alt="Nivel de agua" title="Nivel de agua" href="" coords="250,166,26" shape="circle" data-coords="250,166,26">
+													<area target="" alt="Temperatura y Humedad Internas" title="Temperatura y Humedad Internas" href="" coords="124,312,31" shape="circle" data-coords="124,312,31">
+												</map>
+											</div>
+										</div>
+									</section>
+								</div>
+								
+								<style>
+									.red-overlay {
+										position: absolute;
+										background-color: rgba(255, 0, 0, 0.5);
+										border-radius: 50%;
+										pointer-events: auto;
+									}
+								</style>
+							
+								<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+								<script>
+									const biodigestorInfo = {
+										"Temperatura Interna": {
+											"Descripción": "Monitorea la temperatura interna para asegurar condiciones óptimas de biodigestión."
+										},
+										"Válvula de Salida de Fertilizante": {
+											"Descripción": "Permite la extracción del fertilizante líquido generado."
+										},
+										"Concentración de gas y Presión interna": {
+											"Descripción": "Monitorea la concentración de gas metano y la presión interna del sistema."
+										},
+										"Temperatura y Humedad Externas": {
+											"Descripción": "Mide las condiciones externas para adaptar el funcionamiento del biodigestor."
+										},
+										"Nivel de agua": {
+											"Descripción": "Indica el nivel de agua en el biodigestor, necesario para mantener la mezcla adecuada."
+										},
+										"Temperatura y Humedad Internas": {
+											"Descripción": "Registra la temperatura y humedad dentro del biodigestor para evaluar el ambiente de biodigestión."
+										}
+									};
+							
+									$(document).ready(function() {
+										// Crear superposiciones para cada área
+										$('area').each(function() {
+											const coords = $(this).data('coords').split(',');
+											const x = parseInt(coords[0]);
+											const y = parseInt(coords[1]);
+											const radius = parseInt(coords[2]);
+							
+											const overlay = $('<div class="red-overlay"></div>').css({
+												width: radius * 2 + 'px',
+												height: radius * 2 + 'px',
+												left: (x - radius) + 'px',
+												top: (y - radius) + 'px'
+											}).attr('data-part-name', $(this).attr('alt'));
+							
+											$('#circle-overlays').append(overlay);
+										});
+							
+										// Mostrar tooltip cuando se hace clic en un overlay
+										$('.red-overlay').on('click', function(event) {
+											event.preventDefault();
+											const partName = $(this).data('part-name');
+											const partInfo = biodigestorInfo[partName];
+											const tooltip = $('#tooltip');
+											
+											if (partInfo) {
+												const overlayOffset = $(this).offset();
+												
+												tooltip.html(`<strong>${partName}</strong><br>${partInfo.Descripción}`);
+												tooltip.css({
+													left: overlayOffset.left + $(this).width() / 2 - tooltip.outerWidth() / 2,
+													top: overlayOffset.top - tooltip.outerHeight() - 10,
+													display: 'block'
+												});
+											}
+										});
+							
+										// Oculta el tooltip cuando se hace clic fuera de las áreas
+										$(document).on('click', function(event) {
+											if (!$(event.target).closest('.red-overlay').length) {
+												$('#tooltip').hide();
+											}
+										});
+									});
+								</script>
+							</div>
+						</div>
 					</div>
-
-
+					<h2 class="section-title">Estadísticas en Tiempo Real</h2>
+					<div class="container">
+						<canvas id="biodigestorChart" width="400" height="200"></canvas>
+					</div>
 					
-
+					<script>
+						var ctx = document.getElementById('biodigestorChart').getContext('2d');
+						var biodigestorChart = new Chart(ctx, {
+							type: 'line',
+							data: {
+								labels: ['12:15', '12:20', '12:25', '12:30'], // Ejes X
+								datasets: [
+									{
+										label: 'Temperatura',
+										data: [29, 32, 30, 31], // Datos de producción del Biodigestor 1
+										borderColor: 'rgba(75, 192, 192, 1)',
+										backgroundColor: 'rgba(75, 192, 192, 0.2)'
+									}
+								]
+							},
+							options: {
+								scales: {
+									y: {
+										beginAtZero: true,
+										title: {
+											display: true,
+											text: 'Temperatura (C)' // Etiqueta para el eje Y
+										}
+									},
+									x: {
+										title: {
+											display: true,
+											text: 'Tiempo' // Etiqueta para el eje X
+										}
+									}
+								},
+								plugins: {
+									legend: {
+										display: true,
+										position: 'top',
+									},
+								}
+							}
+						});
+					</script>
+					<div class="container">
+						<canvas id="presionChart" width="400" height="200"></canvas>
+					</div>
+					
+					<script>
+						var ctx = document.getElementById('presionChart').getContext('2d');
+						var biodigestorChart = new Chart(ctx, {
+							type: 'line',
+							data: {
+								labels: ['12:15', '12:20', '12:25', '12:30'], // Ejes X
+								datasets: [
+									{
+										label: 'Presion',
+										data: [11350, 11200, 11542, 11201], // Datos de producción del Biodigestor 1
+										borderColor: 'rgba(75, 192, 192, 1)',
+										backgroundColor: 'rgba(75, 192, 192, 0.2)'
+									}
+								]
+							},
+							options: {
+								scales: {
+									y: {
+										beginAtZero: true,
+										title: {
+											display: true,
+											text: 'Pascales (PA)' // Etiqueta para el eje Y
+										}
+									},
+									x: {
+										title: {
+											display: true,
+											text: 'Tiempo' // Etiqueta para el eje X
+										}
+									}
+								},
+								plugins: {
+									legend: {
+										display: true,
+										position: 'top',
+									},
+								}
+							}
+						});
+					</script>
+					<div class="container">
+						<canvas id="humedadchart" width="400" height="200"></canvas>
+					</div>
+					
+					<script>
+						var ctx = document.getElementById('humedadchart').getContext('2d');
+						var humechart = new Chart(ctx, {
+							type: 'line',
+							data: {
+								labels: ['12:15', '12:20', '12:25', '12:30'], // Ejes X
+								datasets: [
+									{
+										label: 'Humedad',
+										data: [60, 68, 66, 62], // Datos de producción del Biodigestor 1
+										borderColor: 'rgba(75, 192, 192, 1)',
+										backgroundColor: 'rgba(75, 192, 192, 0.2)'
+									}
+								]
+							},
+							options: {
+								scales: {
+									y: {
+										beginAtZero: true,
+										title: {
+											display: true,
+											text: 'Humedad (%)' // Etiqueta para el eje Y
+										}
+									},
+									x: {
+										title: {
+											display: true,
+											text: 'Tiempo' // Etiqueta para el eje X
+										}
+									}
+								},
+								plugins: {
+									legend: {
+										display: true,
+										position: 'top',
+									},
+								}
+							}
+						});
+					</script>
+					<div class="container">
+						<canvas id="gaschart" width="400" height="200"></canvas>
+					</div>
+					
+					<script>
+						var ctx = document.getElementById('gaschart').getContext('2d');
+						var biodigestorChart = new Chart(ctx, {
+							type: 'line',
+							data: {
+								labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'], // Ejes X
+								datasets: [
+									{
+										label: 'Gas',
+										data: [5, 6, 7, 8], // Datos de producción del Biodigestor 1
+										borderColor: 'rgba(75, 192, 192, 1)',
+										backgroundColor: 'rgba(75, 192, 192, 0.2)'
+									}
+								]
+							},
+							options: {
+								scales: {
+									y: {
+										beginAtZero: true,
+										title: {
+											display: true,
+											text: 'Producción de Gas (m³)' // Etiqueta para el eje Y
+										}
+									},
+									x: {
+										title: {
+											display: true,
+											text: 'Tiempo' // Etiqueta para el eje X
+										}
+									}
+								},
+								plugins: {
+									legend: {
+										display: true,
+										position: 'top',
+									},
+								}
+							}
+						});
+					</script>
+			
+					<br>
+					<h2 class="section-title">Sensores</h2>
+				</div>
+			</div>
+				
+			</div>
+			</div>
 				</div>
 			</div>
 			
@@ -298,6 +605,20 @@
 <!-- Azzara JS -->
 <script src="../assets/js/ready.min.js"></script>
 
+
+<!--Librerias JS-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/lib/wow/wow.min.js"></script>
+<script src="../assets/lib/easing/easing.min.js"></script>
+<script src="../assets/lib/waypoints/waypoints.min.js"></script>
+<script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../assets/lib/counterup/counterup.min.js"></script>
+<script src="../assets/lib/parallax/parallax.min.js"></script>
+<script src="../assets/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="../assets/lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>
