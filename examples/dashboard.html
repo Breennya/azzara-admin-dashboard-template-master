@@ -265,7 +265,7 @@
 								<div class="p-0 wow fadeIn" data-wow-delay="0.1s">
 									<section id="container" class="container-fluid">
 										<div class="row">
-											<div class="col-6">
+											<div class="col-4">
 												<img src="../assets/img/bio-diagram.jpg" usemap="#image-map" style="zoom:1;-o-transform:scale(0.3);-moz-transform: scale(0.3);" class="img-fluid">
 													<!-- Tooltip para mostrar información -->
 													<div id="tooltip" style="display: none; position: absolute; background: #f8f9fa; border: 1px solid #dee2e6; padding: 8px; border-radius: 4px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"></div>
@@ -282,9 +282,9 @@
 													</map>
 												
 											</div>
-											<div class="col-6" style="background-color: rgb(255, 255, 255);">
-												<h1 id="titulo"></h1>
-												<p id="textosensor"></p>
+											<div class="col-8" style="background-color: rgb(255, 255, 255);">
+												<h1 id="titulo" style="font-size:24px;"></h1>
+												<p id="textosensor" style="font-size:20px;"></p>
 											</div>
 											
 										</div>
@@ -330,40 +330,27 @@
 											const x = parseInt(coords[0]);
 											const y = parseInt(coords[1]);
 											const radius = parseInt(coords[2]);
-							
+
 											const overlay = $('<div class="red-overlay"></div>').css({
 												width: radius * 2 + 'px',
 												height: radius * 2 + 'px',
 												left: (x - radius) + 'px',
 												top: (y - radius) + 'px'
 											}).attr('data-part-name', $(this).attr('alt'));
-							
+
 											$('#circle-overlays').append(overlay);
 										});
-							
-										// Mostrar tooltip cuando se hace clic en un overlay
+
+										// Actualizar el contenedor de información cuando se hace clic en un overlay
 										$('.red-overlay').on('click', function(event) {
 											event.preventDefault();
 											const partName = $(this).data('part-name');
 											const partInfo = biodigestorInfo[partName];
-											const tooltip = $('#tooltip');
 											
+											// Mostrar la información en el contenedor al lado del diagrama
 											if (partInfo) {
-												const overlayOffset = $(this).offset();
-												
-												tooltip.html(`<strong>${partName}</strong><br>${partInfo.Descripción}`);
-												tooltip.css({
-													left: overlayOffset.left + $(this).width() / 2 - tooltip.outerWidth() / 2,
-													top: overlayOffset.top - tooltip.outerHeight() - 10,
-													display: 'block'
-												});
-											}
-										});
-							
-										// Oculta el tooltip cuando se hace clic fuera de las áreas
-										$(document).on('click', function(event) {
-											if (!$(event.target).closest('.red-overlay').length) {
-												$('#tooltip').hide();
+												$('#titulo').text(partName);
+												$('#textosensor').text(partInfo.Descripción);
 											}
 										});
 									});
