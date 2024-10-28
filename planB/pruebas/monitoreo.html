@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Buttons | Azzara Bootstrap Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- Fonts and icons -->
+	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Open+Sans:300,400,600,700"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['assets/css/fonts.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/azzara.min.css">
+	<link href="assets/styles.css" rel="stylesheet" />
+	<link href="assets/prism.css" rel="stylesheet" />
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+    
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            .main-header{
+                background-color: #072A19;
+                margin-bottom: 30px;
+            }
+            .nav-item{
+                margin-bottom: 40px;
+            }
+            .nav-item a{
+                background-color: #ffffff;
+                height: 50px;
+            }
+            .inicio{
+                text-align: end;
+            }
+            .inicio label{
+                font-family:Arial, Helvetica, sans-serif;
+                margin-left: 30px;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            .inicio label:hover{
+                background-color: #c9f7e0;
+                color: #dee2e6;
+            }
+            .texto{
+                color: #ffffff;
+            }
+        </style>
+    
+</head>
+<body>
+    <div class="main-header">
+        <div class="logo-header">
+            <a href="index.html" class="logo">
+                <p class="logo" style="color: #f8f9fa; font-size: 30px;">VITA</p>
+            </a> 
+        </div>
+    </div>
+	<div class="wrapper">
+		<!--
+		Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
+		-->
+		<div class="sidebar">
+			<div class="sidebar-background"></div>
+			<div class="sidebar-wrapper scrollbar-inner">
+				<div class="sidebar-content">
+					<ul class="nav">
+                        <li class="nav-item" style="text-align: center;">
+                            <img src="img/about.jpg" alt="" style="width: 120px; height: 120px; border-radius: 50%;">
+                            <br><p id="Usuario" style="font-size: 24px;color: #072A19;">Usuario base</p>
+                        </li>
+						<li class="nav-item menu ">
+							<a href="inicio.html">
+								<p style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">
+                                    🏠 Inicio
+                                </p>
+							</a>
+						</li>
+                        <li class="nav-item active menu">
+							<a href="monitoreo.html">
+								<p style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">
+                                    💻 Monitoreo
+                                </p>
+							</a>
+						</li>
+                        <li class="nav-item menu">
+							<a href="estadisticas.html">
+								<p style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">
+                                    📊 Estadisticas
+                                </p>
+							</a>
+						</li>
+                        <li class="nav-item menu">
+							<a href="configuracion.html">
+								<p style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">
+                                    ⚙️ Configuracion
+                                </p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-panel" style="text-align: start;">
+            <div class="content content-documentation">
+				<div class="container-fluid">
+                    <div class="container-fluid">
+                        <div class="card card-documentation">
+                            <div class="inicio card-header ">
+                                <label>Inicio</label>
+                                <label>Guia de uso</label>
+                                <label>Acerca de</label>
+                                <label>Novedades?</label>
+                                </div>
+                        </div>
+                    </div>
+                
+                <h1>Monitoreo <br> <span class="text-primary">Biodigestor Familia Pérez</span></h1>
+                <br>
+                <h2 class="section-title">Estructura</h2>
+                <div class="container-fluid">
+                    <div class="row py-4">
+                        <div class="col-lg-4 px-5 d-flex flex-column justify-content-center">
+                            <!-- Imagen del Biodigestor -->
+                            <div class="p-0 wow fadeIn" data-wow-delay="0.1s">
+                                <section id="container" class="container-fluid">
+                                    <div class="row">
+                                        <div id="biodigestorImage" style="position: relative;"></div>
+                                        <img src="img/bio-1.jpg" alt="Biodigestor" class="img-responsive">
+                                    </div>
+                                </section>
+                            </div>
+                            <!-- Fin de imagen del Biodigestor -->
+                        </div>
+                        <!--SEPARADOR-->
+                        <div class="col-lg-1"></div>
+                        <!--SEPARADOR-->
+        
+                        <!-- Diagrama interactivo del biodigestor -->
+                        <div class="col-lg-6">
+                            <div class="p-0 wow fadeIn" data-wow-delay="0.1s">
+                                <section id="container" class="container-fluid">
+                                    <div class="row">
+                                        <div id="biodigestorDiagram" style="position: relative;">
+                                            <img src="img/bio-diagram.jpg" usemap="#image-map" style="zoom:1;-o-transform:scale(0.3);-moz-transform: scale(0.3);" class="img-fluid">
+                                            
+                                            <!-- Tooltip para mostrar información -->
+                                            <div id="tooltip" style="display: none; position: absolute; background: #f8f9fa; border: 1px solid #dee2e6; padding: 8px; border-radius: 4px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"></div>
+                            
+                                            <div id="circle-overlays"></div>
+                                            
+                                            <map name="image-map">
+                                                <area target="" alt="Temperatura Interna" title="Temperatura Interna" href="" coords="261,307,30" shape="circle" data-coords="261,307,30">
+                                                <area target="" alt="Válvula de Salida de Fertilizante" title="Válvula de Salida de Fertilizante" href="" coords="72,234,28" shape="circle" data-coords="72,234,28">
+                                                <area target="" alt="Concentración de gas y Presión interna" title="Concentración de gas y Presión interna" href="" coords="102,39,29" shape="circle" data-coords="102,39,29">
+                                                <area target="" alt="Temperatura y Humedad Externas" title="Temperatura y Humedad Externas" href="" coords="201,74,30" shape="circle" data-coords="201,74,30">
+                                                <area target="" alt="Nivel de agua" title="Nivel de agua" href="" coords="250,166,26" shape="circle" data-coords="250,166,26">
+                                                <area target="" alt="Temperatura y Humedad Internas" title="Temperatura y Humedad Internas" href="" coords="124,312,31" shape="circle" data-coords="124,312,31">
+                                            </map>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            
+                            <style>
+                                .red-overlay {
+                                    position: absolute;
+                                    background-color: rgba(255, 0, 0, 0.5);
+                                    border-radius: 50%;
+                                    pointer-events: auto;
+                                }
+                            </style>
+                        
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                            <script>
+                                const biodigestorInfo = {
+                                    "Temperatura Interna": {
+                                        "Descripción": "Monitorea la temperatura interna para asegurar condiciones óptimas de biodigestión."
+                                    },
+                                    "Válvula de Salida de Fertilizante": {
+                                        "Descripción": "Permite la extracción del fertilizante líquido generado."
+                                    },
+                                    "Concentración de gas y Presión interna": {
+                                        "Descripción": "Monitorea la concentración de gas metano y la presión interna del sistema."
+                                    },
+                                    "Temperatura y Humedad Externas": {
+                                        "Descripción": "Mide las condiciones externas para adaptar el funcionamiento del biodigestor."
+                                    },
+                                    "Nivel de agua": {
+                                        "Descripción": "Indica el nivel de agua en el biodigestor, necesario para mantener la mezcla adecuada."
+                                    },
+                                    "Temperatura y Humedad Internas": {
+                                        "Descripción": "Registra la temperatura y humedad dentro del biodigestor para evaluar el ambiente de biodigestión."
+                                    }
+                                };
+                        
+                                $(document).ready(function() {
+                                    // Crear superposiciones para cada área
+                                    $('area').each(function() {
+                                        const coords = $(this).data('coords').split(',');
+                                        const x = parseInt(coords[0]);
+                                        const y = parseInt(coords[1]);
+                                        const radius = parseInt(coords[2]);
+                        
+                                        const overlay = $('<div class="red-overlay"></div>').css({
+                                            width: radius * 2 + 'px',
+                                            height: radius * 2 + 'px',
+                                            left: (x - radius) + 'px',
+                                            top: (y - radius) + 'px'
+                                        }).attr('data-part-name', $(this).attr('alt'));
+                        
+                                        $('#circle-overlays').append(overlay);
+                                    });
+                        
+                                    // Mostrar tooltip cuando se hace clic en un overlay
+                                    $('.red-overlay').on('click', function(event) {
+                                        event.preventDefault();
+                                        const partName = $(this).data('part-name');
+                                        const partInfo = biodigestorInfo[partName];
+                                        const tooltip = $('#tooltip');
+                                        
+                                        if (partInfo) {
+                                            const overlayOffset = $(this).offset();
+                                            
+                                            tooltip.html(`<strong>${partName}</strong><br>${partInfo.Descripción}`);
+                                            tooltip.css({
+                                                left: overlayOffset.left + $(this).width() / 2 - tooltip.outerWidth() / 2,
+                                                top: overlayOffset.top - tooltip.outerHeight() - 10,
+                                                display: 'block'
+                                            });
+                                        }
+                                    });
+                        
+                                    // Oculta el tooltip cuando se hace clic fuera de las áreas
+                                    $(document).on('click', function(event) {
+                                        if (!$(event.target).closest('.red-overlay').length) {
+                                            $('#tooltip').hide();
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="section-title">Estadísticas en Tiempo Real</h2>
+                <br>
+                <h2 class="section-title">Sensores</h2>
+            </div>
+        </div>
+			
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script type="text/javascript" src="assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script type="text/javascript" src="assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" charset="utf-8"></script>
+<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/js/ready.js"></script>
+<script src="assets/prism.js"></script>
+<script src="assets/prism-normalize-whitespace.min.js"></script>
+<script type="text/javascript">
+	// Optional
+	Prism.plugins.NormalizeWhitespace.setDefaults({
+		'remove-trailing': true,
+		'remove-indent': true,
+		'left-trim': true,
+		'right-trim': true,
+	});
+	// handle links with @href started with '#' only
+	$(document).on('click', 'a[href^="#"]', function(e) {
+		// target element id
+		var id = $(this).attr('href');
+		// target element
+		var $id = $(id);
+		if ($id.length === 0) {
+			return;
+		}
+		// prevent standard hash navigation (avoid blinking in IE)
+		e.preventDefault();
+		// top position relative to the document
+		var pos = $id.offset().top - 80;
+		// animated top scrolling
+		$('body, html').animate({scrollTop: pos});
+	});
+</script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</html>
