@@ -126,8 +126,6 @@
                     </div>
                 </div>
             </div>
-            <!-- About End -->
-
 
             <!-- Service Start -->
             <div class="service">
@@ -141,7 +139,8 @@
                             <div class="service-item">
                                 <h3>Reducción de riesgos</h3>
                                 <img src="img/icon/reduccionriesgos.png" alt="Service">
-                                <p>Monitoreo continuo que minimiza accidentes y contaminación.</p>                            </div>
+                                <p>Monitoreo continuo que minimiza accidentes y contaminación.</p>                            
+                            </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="service-item">
@@ -182,7 +181,7 @@
                             <div class="service-item">
                                 <h3>Costos reducidos: </h3>
                                 <img src="img/icon/costosreducidos.png" alt="Service">
-                                <p>Menor dependencia de fuentes convencionales disminuye gastos energéticos.</p>
+                                <p>Menor dependencia de fuentes convencionales disminuye gastos.</p>
                             </div>
                         </div>
                     </div>

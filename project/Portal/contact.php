@@ -88,7 +88,7 @@
                             <h2>Contáctanos</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">Inicio</a>
+                            <a href="index.php">Inicio</a>
                             <a href="">Contáctanos</a>
                         </div>
                     </div>

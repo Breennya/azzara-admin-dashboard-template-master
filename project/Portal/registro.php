@@ -87,7 +87,7 @@
                             <h2>Registro de Usuario</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">Inicio</a>
+                            <a href="index.php">Inicio</a>
                             <a href="">Registrarse</a>
                         </div>
                     </div>

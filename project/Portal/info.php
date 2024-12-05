@@ -87,7 +87,7 @@
                         <h2>Preguntas Frecuentes</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Inicio</a>
+                        <a href="index.php">Inicio</a>
                         <a href="">Informacón</a>
                     </div>
                 </div>

@@ -87,7 +87,7 @@
                             <h2>Guía de uso</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">Inicio</a>
+                            <a href="index.php">Inicio</a>
                             <a href="">Guía de uso</a>
                         </div>
                     </div>
@@ -100,21 +100,21 @@
             <div class="portfolio">
                 <div class="container">
                     <div class="section-header">
-                        <h2>Gupia de uso</h2>
-                        <p>Gupia de instrucciones y recomendaciones básicas para tu Biodigestor.</p>
+                        <h2>Guía de uso</h2>
+                        <p>Guía de instrucciones y recomendaciones básicas para tu Biodigestor.</p>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <ul id="portfolio-flters">
                                 <li data-filter="*" class="filter-active">Todo</li>
-                                <li data-filter=".web-pasoapaso">Paso a Paso</li>
-                                <li data-filter=".web-info">Información</li>
+                                <li data-filter=".web-funcionamiento">Funcionamiento del Sistema</li>
+                                <li data-filter=".web-mantenimiento">Mantenimiento</li>
                                 <li data-filter=".dig-recomendaciones">Recomendaciones</li>
                             </ul>
                         </div>
                     </div>
                     <div class="row portfolio-container">
-                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-pasoapaso">
+                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-funcionamiento">
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="img/portfolio-1.jpg" alt="Portfolio Image">
@@ -124,7 +124,7 @@
                                 </figure>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-info">
+                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-mantenimiento">
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="img/portfolio-2.jpg" alt="Portfolio Image">
@@ -144,7 +144,7 @@
                                 </figure>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-pasoapaso">
+                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-funcionamiento">
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="img/portfolio-4.jpg" alt="Portfolio Image">
@@ -154,7 +154,7 @@
                                 </figure>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-pasoapaso">
+                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-funcionamiento">
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="img/portfolio-1.jpg" alt="Portfolio Image">
@@ -164,7 +164,7 @@
                                 </figure>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-info">
+                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-mantenimiento">
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="img/portfolio-2.jpg" alt="Portfolio Image">
@@ -184,7 +184,7 @@
                                 </figure>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-pasoapaso">
+                        <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-funcionamiento">
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="img/portfolio-4.jpg" alt="Portfolio Image">
